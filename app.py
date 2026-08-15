@@ -3,9 +3,11 @@ import json
 from pathlib import Path
 
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 
 
 app = Flask(__name__)
+CORS(app)
 
 # Store courses.json in the same folder as app.py
 DATA_FILE = Path(__file__).parent / "courses.json"
